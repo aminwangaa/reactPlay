@@ -5,6 +5,12 @@ import {TestContext} from "./index"
 function Child() {
     const state: any = useContext(TestContext);
     const [num, setNum] = useState(0)
+
+    const randomNum = () => {
+        const num = ~~(Math.random() * 100)
+        setNum(() => num)
+    }
+
     return (
         <div>
             <button
@@ -15,7 +21,11 @@ function Child() {
                 子组件
             </button>
             {state.name}
-            <p>子组件自身数字：{num}</p>
+
+            <p>
+                <button onClick={randomNum}>随机数</button>
+                子组件自身数字：{num}
+            </p>
         </div>
     )
 }

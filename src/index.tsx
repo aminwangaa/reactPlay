@@ -92,6 +92,7 @@ function Father() {
         <div>
             <Provider value={state}>
                 <button onClick={changeName}>
+                    父组件
                     {state.name}
                 </button>
                 {/*props的数据可通过context传递*/}
